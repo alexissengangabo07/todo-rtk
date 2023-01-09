@@ -18,6 +18,7 @@ function App() {
             <li>Task 2</li>
           </ul>
         </div>
+        <h1>Allah akbar !</h1>
       </form>
     </div>
   )

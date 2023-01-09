@@ -7,6 +7,7 @@ function App() {
 
   return (
     <div className="App">
+      <h2>To do list<h2/>
       <form action="">
         <div>
           <input type="text" placeholder='add tack' />

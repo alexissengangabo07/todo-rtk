@@ -5,26 +5,40 @@ const todo = createSlice({
     initialState: [
         {
             id: '1',
-            taskName: 'Task 1',
+            title: 'Task 1',
             done: true
         },
         {
             id: '2',
-            taskName: 'Task 2',
+            title: 'Task 2',
+            done: false
+        },
+        {
+            id: '3',
+            title: 'Task 3',
             done: false
         }
     ],
     reducers: {
-        addTask() {
+        addTask(state, action) {
+            const newTask = {
+                id: new Date().getTime(),
+                title: action.payload,
+                done: false
+            };
 
+            state.push(newTask);
         },
-        deleteTask() {
-
+        deleteTask(state, action) {
+            return state.filter(task => task.id !== action.payload);
         },
-        updateStatus() {
-
+        updateStatus(state, action) {
+            const index = state.findIndex(item => item.id === action.payload);
+            state[index].done = !state[index].done;
+            return state;
         }
     }
 });
 
+export const { addTask, deleteTask, updateStatus } = todo.actions;
 export default todo.reducer;

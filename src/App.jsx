@@ -1,23 +1,10 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import TodoList from "./pages/TodoList"
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <form action="">
-        <div>
-          <input type="text" placeholder='add tack' />
-        </div>
-        <div>
-          <ul>
-            <li>Task 1</li>
-            <li>Task 2</li>
-          </ul>
-        </div>
-      </form>
+      <TodoList />
     </div>
   )
 }

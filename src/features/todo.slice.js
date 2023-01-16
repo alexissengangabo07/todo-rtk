@@ -30,10 +30,12 @@ const todo = createSlice({
             state.push(newTask);
         },
         deleteTask(state, action) {
-
+            return state.filter(task => task.id !== action.payload);
         },
         updateStatus(state, action) {
-
+            const index = state.findIndex(item => item.id === action.payload);
+            state[index].done = !state[index].done;
+            return state;
         }
     }
 });
